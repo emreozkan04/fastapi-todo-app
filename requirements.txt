@@ -1,10 +1,10 @@
 fastapi
-passlib[bcrypt]
-sqlalchemy
+sqlmodel
 alembic
+passlib[bcrypt]
 python-jose[cryptography]
 gunicorn
-psycopg2-binary
-sqlmodel
 uvicorn
+psycopg2-binary
 Jinja2
+python-multipart
