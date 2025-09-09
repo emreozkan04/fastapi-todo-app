@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Todo App</title>
+    <title>Giriş - Yapılacaklar Uygulaması</title>
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
 </head>
 <body>
     <div class="auth-page-container">
-        <h1>Todo Application</h1>
+        <h1>Yapılacaklar Uygulaması</h1>
         <div id="login-container">
             <div class="modal-content">
                 <form id="login-form">
-                    <h2>Login</h2>
-                    <input type="email" id="login-email" placeholder="Email" required>
-                    <input type="password" id="login-password" placeholder="Password" required>
+                    <h2>Giriş Yap</h2>
+                    <input type="email" id="login-email" placeholder="E-posta" required>
+                    <input type="password" id="login-password" placeholder="Şifre" required>
                     <div class="modal-buttons">
-                        <button type="submit" class="save-btn">Login</button>
+                        <button type="submit" class="save-btn">Giriş Yap</button>
                     </div>
-                    <p class="form-switcher">Don't have an account? <a id="show-register-btn">Register here</a></p>
+                    <p class="form-switcher">Hesabınız yok mu? <a id="show-register-btn">Buradan kaydolun</a></p>
                 </form>
             </div>
         </div>
@@ -26,13 +26,13 @@
         <div id="register-container" style="display: none;">
             <div class="modal-content">
                 <form id="register-form">
-                    <h2>Register</h2>
-                    <input type="email" id="register-email" placeholder="Email" required>
-                    <input type="password" id="register-password" placeholder="Password" required>
+                    <h2>Kaydol</h2>
+                    <input type="email" id="register-email" placeholder="E-posta" required>
+                    <input type="password" id="register-password" placeholder="Şifre" required>
                     <div class="modal-buttons">
-                        <button type="submit" class="save-btn">Register</button>
+                        <button type="submit" class="save-btn">Kaydol</button>
                     </div>
-                    <p class="form-switcher">Already have an account? <a id="show-login-btn">Login here</a></p>
+                    <p class="form-switcher">Zaten bir hesabınız var mı? <a id="show-login-btn">Buradan giriş yapın</a></p>
                 </form>
             </div>
         </div>

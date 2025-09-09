@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Yapılacaklar Listesi</title>
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>My Todo List</h1>
-            <button id="logout-btn" class="logout-btn">Logout</button>
+            <h1>Yapılacaklar Listem</h1>
+            <button id="logout-btn" class="logout-btn">Çıkış Yap</button>
         </div>
         
         <form id="add-todo-form">
-            <input type="text" id="title" placeholder="Title" required>
-            <input type="text" id="description" placeholder="Description">
+            <input type="text" id="title" placeholder="Başlık" required>
+            <input type="text" id="description" placeholder="Açıklama">
             <select id="priority">
-                <option value="1">Low Priority</option>
-                <option value="2">Medium Priority</option>
-                <option value="3">High Priority</option>
+                <option value="1">Düşük Öncelik</option>
+                <option value="2">Orta Öncelik</option>
+                <option value="3">Yüksek Öncelik</option>
             </select>
-            <button type="submit">Add Todo</button>
+            <button type="submit">Ekle</button>
         </form>
 
         <div id="todo-list"></div>
@@ -30,18 +30,18 @@
     <div id="edit-modal" class="modal-overlay">
         <div class="modal-content">
             <form id="edit-form">
-                <h2>Edit Todo</h2>
+                <h2>Görevi Düzenle</h2>
                 <input type="hidden" id="edit-todo-id">
-                <input type="text" id="edit-title" placeholder="Title" required>
-                <input type="text" id="edit-description" placeholder="Description">
+                <input type="text" id="edit-title" placeholder="Başlık" required>
+                <input type="text" id="edit-description" placeholder="Açıklama">
                 <select id="edit-priority">
-                    <option value="1">Low Priority</option>
-                    <option value="2">Medium Priority</option>
-                    <option value="3">High Priority</option>
+                    <option value="1">Düşük Öncelik</option>
+                    <option value="2">Orta Öncelik</option>
+                    <option value="3">Yüksek Öncelik</option>
                 </select>
                 <div class="modal-buttons">
-                    <button type="submit" class="save-btn">Save Changes</button>
-                    <button type="button" id="cancel-edit-btn" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="save-btn">Değişiklikleri Kaydet</button>
+                    <button type="button" id="cancel-edit-btn" class="cancel-btn">İptal</button>
                 </div>
             </form>
         </div>
@@ -49,11 +49,11 @@
 
     <div id="delete-modal" class="modal-overlay">
         <div class="modal-content">
-            <h2>Confirm Deletion</h2>
-            <p>Are you sure you want to delete this todo?</p>
+            <h2>Silmeyi Onayla</h2>
+            <p>Bu görevi silmek istediğinize emin misiniz?</p>
             <div class="modal-buttons">
-                <button type="button" id="confirm-delete-btn" class="confirm-btn">Delete</button>
-                <button type="button" id="cancel-delete-btn" class="cancel-btn">Cancel</button>
+                <button type="button" id="confirm-delete-btn" class="confirm-btn">Sil</button>
+                <button type="button" id="cancel-delete-btn" class="cancel-btn">İptal</button>
             </div>
         </div>
     </div>
