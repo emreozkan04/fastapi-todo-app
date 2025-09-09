@@ -1,5 +1,4 @@
 // app/static/javascript/login.js
-const API_URL = 'http://127.0.0.1:8000';
 
 // --- DOM Elements ---
 const loginContainer = document.getElementById('login-container');
@@ -20,7 +19,7 @@ async function login(email, password) {
     formData.append('username', email);
     formData.append('password', password);
 
-    const response = await fetch(`${API_URL}/login`, {
+    const response = await fetch(`/login`, { // <-- CORRECTED
         method: 'POST',
         body: formData,
     });
@@ -32,12 +31,11 @@ async function login(email, password) {
 
     const tokenData = await response.json();
     saveToken(tokenData.access_token);
-    // On successful login, redirect to the main app page
     window.location.href = '/';
 }
 
 async function register(email, password) {
-    const response = await fetch(`${API_URL}/register`, {
+    const response = await fetch(`/register`, { // <-- CORRECTED
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -48,7 +46,6 @@ async function register(email, password) {
         throw new Error(errorData.detail || 'Registration failed');
     }
     
-    // After registering, automatically log in
     await login(email, password);
 }
 

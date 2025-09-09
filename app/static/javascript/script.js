@@ -1,5 +1,4 @@
 // app/static/javascript/script.js
-const API_URL = 'http://127.0.0.1:8000';
 
 // --- DOM Elements ---
 const todoForm = document.getElementById('add-todo-form');
@@ -33,7 +32,7 @@ async function apiFetch(endpoint, options = {}) {
         headers['Authorization'] = `Bearer ${token}`;
     }
 
-    const response = await fetch(`${API_URL}${endpoint}`, { ...options, headers });
+    const response = await fetch(endpoint, { ...options, headers }); // <-- CORRECTED
 
     if (response.status === 401) {
         logout();
@@ -102,8 +101,6 @@ function renderTodos(todos) {
         const todoItem = document.createElement('div');
         todoItem.className = `todo-item priority-${getPriorityName(todo.priority).toLowerCase()}`;
         
-        // CORRECTED LINE: We now escape the single quotes in the JSON string
-        // before inserting it into the HTML.
         const todoJsonString = JSON.stringify(todo).replace(/'/g, "&apos;");
 
         todoItem.innerHTML = `
