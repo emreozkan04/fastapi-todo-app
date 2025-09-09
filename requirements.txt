@@ -6,3 +6,4 @@ python-jose[cryptography]
 gunicorn
 psycopg2-binary
 sqlmodel
+uvicorn
