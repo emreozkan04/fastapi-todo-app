@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Todo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+    <div class="auth-page-container">
+        <h1>Todo Application</h1>
+        <div id="login-container">
+            <div class="modal-content">
+                <form id="login-form">
+                    <h2>Login</h2>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <div class="modal-buttons">
+                        <button type="submit" class="save-btn">Login</button>
+                    </div>
+                    <p class="form-switcher">Don't have an account? <a id="show-register-btn">Register here</a></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="register-container" style="display: none;">
+            <div class="modal-content">
+                <form id="register-form">
+                    <h2>Register</h2>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <div class="modal-buttons">
+                        <button type="submit" class="save-btn">Register</button>
+                    </div>
+                    <p class="form-switcher">Already have an account? <a id="show-login-btn">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/javascript/login.js') }}"></script>
+</body>
+</html>
